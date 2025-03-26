@@ -21,6 +21,51 @@ body {
   font-family: "Winky Sans", sans-serif;
 }
 
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 128px;
+  align-items: center;
+}
+header .logo {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: lighter;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  animation: bounce 200ms linear alternate infinite;
+  cursor: crosshair;
+}
+header .logo:hover {
+  animation-play-state: paused;
+  color: #48e98b;
+}
+header .menu-list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 8px;
+}
+header .menu-list-item a {
+  display: inline-block;
+  text-decoration: none;
+  color: #f2f2f2;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+header .menu-list-item a:hover {
+  background-color: #48e98b;
+  scale: 1.05;
+}
+header .menu-list .active a {
+  background-color: #48e98b;
+  color: #1a1a1a;
+  pointer-events: none;
+}
+
 @keyframes loopX {
   0% {
     transform: rotatex(0deg);
@@ -29,7 +74,27 @@ body {
     transform: rotatex(360deg);
   }
 }
-section {
+@keyframes bounce {
+  0% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+.container-home {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-home h1 {
+  font-size: 4rem;
+}
+
+.aula01 {
   width: 100%;
   height: 100%;
   min-height: 500px;
@@ -38,18 +103,18 @@ section {
   justify-content: center;
   align-items: center;
   gap: 16px;
-  perspective: 50px;
+  perspective: 100px;
 }
-section h1 {
+.aula01 h1 {
   font-size: 3rem;
   margin-bottom: 24px;
   text-align: center;
 }
-section .box {
+.aula01 .box {
   width: 100px;
   height: 100px;
   background-color: #48e98b;
   border-radius: 16px;
-  box-shadow: inset 15px 15px 15px 1px rgba(26, 26, 26, 0.3), 0 0 15px 10px rgba(162, 255, 120, 0.2);
+  box-shadow: inset 15px 15px 15px 1px rgba(26, 26, 26, 0.3), 0 0 5px rgba(254, 255, 254, 0.5);
   animation: loopX 10s linear infinite;
 }/*# sourceMappingURL=style.css.map */

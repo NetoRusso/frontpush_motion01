@@ -9,7 +9,7 @@ $green: #48e98b;
 
 
 // Reset ================================================
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,13 +31,83 @@ body {
   font-family: "Winky Sans", sans-serif;
 }
 
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 128px;
+  align-items: center;
+
+  .logo {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: lighter;
+    color: $white;
+    text-transform: uppercase;
+    animation: bounce 200ms linear alternate infinite;
+    cursor: crosshair;
+
+    &:hover {
+      animation-play-state: paused;
+      color: $green;
+    }
+
+  }
+
+  .menu {
+
+    &-list {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 8px;
+
+      &-item {
+
+        a{
+          display: inline-block;
+          text-decoration: none;
+          color: $white;
+          padding: 8px;
+          border-radius: 8px;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            background-color: $green;
+            scale: 1.05;
+          }
+          
+        }
+      }
+      .active {
+        a {
+          background-color: $green;
+          color: $black;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+
 // animations ================================================
 
 @keyframes loopX {
   0% {
     transform: rotatex(0deg);
   }
+
   100% {
     transform: rotatex(360deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
   }
 }
