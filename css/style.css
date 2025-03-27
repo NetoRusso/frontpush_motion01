@@ -115,21 +115,61 @@ header .menu-list .active a {
     transform: rotatex(0deg);
   }
 }
-@keyframes smash {
+@keyframes light {
   0% {
-    transform: scaleX(1);
+    box-shadow: none;
+  }
+  10% {
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9);
+  }
+  20% {
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9), 0 0 5px 5px rgba(248, 1, 13, 0.7);
+  }
+  30% {
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9), 15px 0 5px 5px rgba(248, 1, 13, 0.7), 0 0 10px 10px rgba(248, 1, 13, 0.4);
   }
   40% {
-    transform: scaleX(1.5);
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9), -15px 0 5px 5px rgba(248, 1, 13, 0.7), 15px 0 10px 10px rgba(248, 1, 13, 0.4), 0 0 15px 15px rgba(248, 1, 13, 0.2);
+  }
+  50% {
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9), 15px 0 5px 5px rgba(248, 1, 13, 0.7), -15px 0 10px 10px rgba(248, 1, 13, 0.4), 10px 0 15px 15px rgba(248, 1, 13, 0.2), 0 0 20px 20px rgba(248, 1, 13, 0.1);
   }
   60% {
-    transform: scaleX(1);
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9), -15px 0 5px 5px rgba(248, 1, 13, 0.7), 15px 0 10px 10px rgba(248, 1, 13, 0.4), -10px 0 15px 15px rgba(248, 1, 13, 0.2), 10px 0 20px 20px rgba(248, 1, 13, 0.1);
+  }
+  70% {
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9), 10px 0 5px 5px rgba(248, 1, 13, 0.7), -10px 0 10px 10px rgba(248, 1, 13, 0.4), 15px 0 15px 15px rgba(248, 1, 13, 0.2), -15px 0 20px 20px rgba(248, 1, 13, 0.1);
   }
   80% {
-    transform: scaleX(1.25);
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9), -10px 0 5px 5px rgba(248, 1, 13, 0.7), 10px 0 10px 10px rgba(248, 1, 13, 0.4), -15px 0 15px 15px rgba(248, 1, 13, 0.2), 15px 0 20px 20px rgba(248, 1, 13, 0.1);
+  }
+  90% {
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9), 0px 0 5px 5px rgba(248, 1, 13, 0.7), 0px 0 10px 10px rgba(248, 1, 13, 0.4), 10px 0 15px 15px rgba(248, 1, 13, 0.2), -10px 0 20px 20px rgba(248, 1, 13, 0.1);
   }
   100% {
-    transform: scaleX(1);
+    box-shadow: inset 0px 0px 0px 4px rgb(248, 1, 13), 0 0 0px 3px rgba(248, 1, 13, 0.9), 0px 0 5px 5px rgba(248, 1, 13, 0.7), 0px 0 10px 10px rgba(248, 1, 13, 0.4), 0px 0 15px 15px rgba(248, 1, 13, 0.2), 0px 0 20px 20px rgba(248, 1, 13, 0.1);
+  }
+}
+@keyframes lateral-teste {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+@keyframes vertical-teste {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(-50px);
   }
 }
 .container-home {
@@ -137,11 +177,299 @@ header .menu-list .active a {
   height: auto;
   min-height: 500px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .container-home h1 {
   font-size: 4rem;
+}
+.container-home .cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px auto;
+}
+.container-home .cta h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.container-home .cta h2 p {
+  position: relative;
+}
+.container-home .cta h2 p::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: -1;
+  mix-blend-mode: lighten;
+  filter: blur(7px);
+  animation: light 5s linear alternate infinite;
+}
+.container-home .btn-cta {
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f2f2f2;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #1a1a1a;
+  transition: all 300ms ease-in-out;
+}
+.container-home .btn-cta:hover {
+  cursor: cell;
+  scale: 0.9;
+  background-color: red;
+  color: #f2f2f2;
+  animation: light 5s linear alternate infinite;
+}
+
+.teste-container {
+  width: 100%;
+  height: auto;
+  min-height: 1000px;
+  margin: 64px auto 16px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.teste-container h1 {
+  font-size: 4rem;
+}
+.teste-container .btn-doc {
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f2f2f2;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #1a1a1a;
+  transition: all 300ms ease-in-out;
+  box-shadow: 5px 5px 10px rgba(3, 255, 66, 0.3);
+}
+.teste-container .btn-doc:hover {
+  cursor: pointer;
+  scale: 0.95;
+  background-color: #48e98b;
+  color: #1a1a1a;
+  box-shadow: 3px 3px 5px rgba(253, 255, 255, 0.3);
+}
+.teste-container .teste {
+  width: 80%;
+  min-width: 320px;
+  margin: 32px auto 16px auto;
+  height: auto;
+  min-height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 16px;
+}
+.teste-container .teste .container-box {
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+}
+.teste-container .teste .container-box h3 {
+  color: #f2f2f2;
+  font-size: 20px;
+  text-align: center;
+}
+.teste-container .teste .container-box .box-parent {
+  width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.teste-container .teste .container-box .box-parent .box {
+  width: 150px;
+  height: 150px;
+  background-color: #48e98b;
+  border-radius: 16px;
+  cursor: crosshair;
+  box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.teste-container .teste .container-box .box-resposta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.teste-container .teste .container-box .box-resposta p {
+  color: #f2f2f2;
+  font-size: 14px;
+  text-align: center;
+}
+.teste-container .teste .container-box .box-resposta span {
+  color: #48e98b;
+  font-size: 14px;
+  text-align: center;
+}
+.teste-container .teste-1 .container-box .parent-1 {
+  perspective: 300px;
+}
+.teste-container .teste-1 .container-box .parent-1 .box {
+  transform-origin: 0% 0%;
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-1 .box:hover {
+  transform: rotate(45deg);
+}
+.teste-container .teste-1 .container-box .parent-2 {
+  perspective: 300px;
+}
+.teste-container .teste-1 .container-box .parent-2 .box {
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-2 .box:hover {
+  transform: translate(50px, 0px);
+}
+.teste-container .teste-1 .container-box .parent-3 {
+  perspective: 300px;
+}
+.teste-container .teste-1 .container-box .parent-3 .box {
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-3 .box:hover {
+  transform: translate(0px, -50px);
+}
+.teste-container .teste-1 .container-box .parent-4 {
+  perspective: 300px;
+}
+.teste-container .teste-1 .container-box .parent-4 .box {
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-4 .box:hover {
+  transform: scale(0.7);
+}
+.teste-container .teste-1 .container-box .parent-5 {
+  perspective: 300px;
+}
+.teste-container .teste-1 .container-box .parent-5 .box {
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-5 .box:hover {
+  transform: scale(1.2, 1.2);
+}
+.teste-container .teste-1 .container-box .parent-6 {
+  perspective: 300px;
+}
+.teste-container .teste-1 .container-box .parent-6 .box {
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-6 .box:hover {
+  transform: rotate(45deg);
+}
+.teste-container .teste-1 .container-box .parent-7 {
+  perspective: 200px;
+}
+.teste-container .teste-1 .container-box .parent-7 .box {
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-7 .box:hover {
+  transform: skew(15deg, 30deg);
+}
+.teste-container .teste-1 .container-box .parent-8 {
+  perspective: 200px;
+}
+.teste-container .teste-1 .container-box .parent-8 .box {
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-8 .box:hover {
+  transform: skewX(20deg);
+}
+.teste-container .teste-1 .container-box .parent-9 {
+  perspective: 200px;
+}
+.teste-container .teste-1 .container-box .parent-9 .box {
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-9 .box:hover {
+  transform: skewY(-15deg);
+}
+.teste-container .teste-1 .container-box .parent-10 {
+  perspective: 200px;
+}
+.teste-container .teste-1 .container-box .parent-10 .box {
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-1 .container-box .parent-10 .box:hover {
+  transform: matrix(1, 0, 0, 1, 100, 50);
+}
+.teste-container .teste-2 .container-box .box-parent .box {
+  background-color: #066df5;
+}
+.teste-container .teste-2 .container-box .parent-11 {
+  perspective: 300px;
+}
+.teste-container .teste-2 .container-box .parent-11 .box {
+  transform-origin: 0% 0%;
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-2 .container-box .parent-11 .box:hover {
+  transform: translate3d(50px, 20px, 100px);
+}
+.teste-container .teste-2 .container-box .parent-12 {
+  perspective: 300px;
+}
+.teste-container .teste-2 .container-box .parent-12 .box {
+  transform-origin: 0% 0%;
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-2 .container-box .parent-12 .box:hover {
+  transform: scale3d(1.2, 0.8, 1.5);
+}
+.teste-container .teste-2 .container-box .parent-13 {
+  perspective: 300px;
+}
+.teste-container .teste-2 .container-box .parent-13 .box {
+  transform-origin: 0% 0%;
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-2 .container-box .parent-13 .box:hover {
+  transform: rotate3d(1, 1, 0, 45deg);
+}
+.teste-container .teste-2 .container-box .parent-14 {
+  perspective: 300px;
+  transform-style: preserve-3d;
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-2 .container-box .parent-14 .box {
+  transform-origin: 0% 0%;
+  transition: all 500ms ease-in-out;
+  transform-origin: center center;
+}
+.teste-container .teste-2 .container-box .parent-14:hover {
+  transform: rotateX(60deg);
+}
+.teste-container .teste-2 .container-box .parent-14:hover .box {
+  transform: rotateY(45deg);
+}
+.teste-container .teste-2 .container-box .parent-15 {
+  perspective: 300px;
+}
+.teste-container .teste-2 .container-box .parent-15 .box {
+  transform-origin: 0% 0%;
+  transition: all 500ms ease-in-out;
+}
+.teste-container .teste-2 .container-box .parent-15 .box:hover {
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 100, 50, 100, 1);
 }
 
 .aula01 {

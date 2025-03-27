@@ -5,13 +5,379 @@
   height: auto;
   min-height: 500px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   h1 {
     font-size: 4rem;
   }
+
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin: 24px auto;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      p {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: transparent;
+          border-radius: 50%;
+          z-index: -1;
+          mix-blend-mode: lighten;
+          filter: blur(7px);
+          animation: light 5s linear alternate infinite;
+        }
+      }
+    }
+  }
+
+  .btn-cta {
+    text-decoration: none;
+    display: inline-block;
+    background-color: $white;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: $black;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      cursor: cell;
+      scale: .9;
+      background-color: red;
+      color: $white;
+      animation: light 5s linear alternate infinite;
+    }
+  }
+
 }
+
+.teste-container {
+  width: 100%;
+  height: auto;
+  min-height: 1000px;
+  margin: 64px auto 16px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .btn-doc {
+    text-decoration: none;
+    display: inline-block;
+    background-color: $white;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: $black;
+    transition: all 300ms ease-in-out;
+    box-shadow: 5px 5px 10px rgba(3, 255, 66, 0.3);
+    
+    &:hover { 
+      cursor: pointer;
+      scale: 0.95;
+      background-color: $green;
+      color: $black;
+      // backdrop-filter: opacity(0.5);
+      box-shadow: 3px 3px 5px rgba(253, 255, 255, 0.3);
+    }
+  }
+
+  .teste {
+    width: 80%;
+    min-width: 320px;
+    margin: 32px auto 16px auto;
+    height: auto;
+    min-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 16px;
+
+
+    .container-box {
+      width: 250px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+
+      h3 {
+        color: $white;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .box-parent {
+        width: 150px;
+        height: 150px;
+        border-radius: 16px;
+        background-color: rgba(0, 0, 0, .3);
+
+        .box {
+          width: 150px;
+          height: 150px;
+          background-color: $green;
+          border-radius: 16px;
+          cursor: crosshair;
+          box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, .3);
+        }
+      }
+
+      .box-resposta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        p {
+          color: $white;
+          font-size: 14px;
+          text-align: center;
+        }
+
+        span {
+          color: $green;
+          font-size: 14px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .teste-1 {
+    .container-box {
+      .parent-1 {
+        perspective: 300px;
+
+        .box {
+          transform-origin: 0% 0%;
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .parent-2 {
+        perspective: 300px;
+
+        .box {
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: translate(50px, 0px);
+          }
+        }
+      }
+
+      .parent-3 {
+        perspective: 300px;
+
+        .box {
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: translate(0px, -50px);
+          }
+        }
+      }
+
+      .parent-4 {
+        perspective: 300px;
+
+        .box {
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: scale(0.7);
+          }
+        }
+      }
+
+      .parent-5 {
+        perspective: 300px;
+
+        .box {
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: scale(1.2, 1.2);
+          }
+        }
+      }
+
+      .parent-6 {
+        perspective: 300px;
+
+        .box {
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .parent-7 {
+        perspective: 200px;
+
+        .box {
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: skew(15deg, 30deg);
+          }
+        }
+      }
+
+      .parent-8 {
+        perspective: 200px;
+
+        .box {
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: skewX(20deg);
+          }
+        }
+      }
+
+      .parent-9 {
+        perspective: 200px;
+
+        .box {
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: skewY(-15deg);
+          }
+        }
+      }
+
+      .parent-10 {
+        perspective: 200px;
+
+        .box {
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: matrix(1, 0, 0, 1, 100, 50);
+          }
+        }
+      }
+
+    }
+  }
+  .teste-2 {
+    .container-box {
+      .box-parent {
+        .box {
+          background-color: $blue;
+        }
+      }
+
+      .parent-11 {
+        perspective: 300px;
+
+        .box {
+          transform-origin: 0% 0%;
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: translate3d(50px, 20px, 100px);
+          }
+        }
+      }
+
+      .parent-12 {
+        perspective: 300px;
+
+        .box {
+          transform-origin: 0% 0%;
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: scale3d(1.2, 0.8, 1.5);
+          }
+        }
+      }
+
+      .parent-13 {
+        perspective: 300px;
+        
+        .box {
+          transform-origin: 0% 0%;
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: rotate3d(1, 1, 0, 45deg);
+          }
+        }
+      }
+
+      .parent-14 {
+        perspective: 300px;
+        transform-style: preserve-3d;
+        transition: all 500ms ease-in-out;
+        
+        .box {
+          transform-origin: 0% 0%;
+          transition: all 500ms ease-in-out;
+          transform-origin: center center;
+        }
+
+        &:hover {
+          transform: rotateX(60deg);
+          .box {
+            transform: rotateY(45deg);
+          }
+        }
+      }
+
+      .parent-15 {
+        perspective: 300px;
+
+        .box {
+          transform-origin: 0% 0%;
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 100, 50, 100, 1);
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
 
 .aula01 {
   width: 100%;
@@ -104,3 +470,4 @@
     }
   }
 }
+
