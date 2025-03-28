@@ -374,3 +374,14 @@ header {
     transform: rotate(45deg);
   }
 }
+
+@keyframes aula04 {
+  0% {
+    width: 10px;
+
+  }
+  
+  100% {
+    width: 150px;
+  }
+}
