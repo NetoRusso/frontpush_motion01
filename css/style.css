@@ -95,7 +95,7 @@ header .menu-mobile .mobile-nav .menu-list {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 24px;
+  gap: 16px;
   padding: 24px;
 }
 header .menu-mobile .mobile-nav span {

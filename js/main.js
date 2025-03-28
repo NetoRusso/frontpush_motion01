@@ -1,3 +1,4 @@
+
 function criarCabecalho() {
   return `
     <header>
@@ -17,6 +18,7 @@ function criarCabecalho() {
       <div class="menu-mobile" id="menu-mobile">
         <nav class="mobile-nav">
           <ul class="menu-list">
+          <li class="menu-list-item"><a href="/index.html">Home</a></li>
           <li class="menu-list-item"><a href="/pages/aula01.html">Aula 01</a></li>
           <li class="menu-list-item"><a href="/pages/aula02.html">Aula 02</a></li>
           <li class="menu-list-item"><a href="/pages/aula03.html">Aula 03</a></li>
@@ -70,6 +72,7 @@ const updateMenuLogoBehavior = () => {
     menuLogo.removeEventListener("click", handleMenuLogoClick);
     menuLogo.attributes.href.value = '/index.html';
   }
+
   modal.classList.remove('active');
   menuMobile.classList.remove('menu-mobile-active');
 };
