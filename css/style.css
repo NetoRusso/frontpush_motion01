@@ -244,6 +244,18 @@ header .menu-mobile .mobile-nav span {
     transform: translateY(-50px);
   }
 }
+@keyframes aula03 {
+  0% {
+    width: 200px;
+    height: 200px;
+    transform: rotate(-45deg);
+  }
+  100% {
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+  }
+}
 .container-home {
   width: 100%;
   height: auto;
@@ -622,4 +634,53 @@ header .menu-mobile .mobile-nav span {
 .aula02 .parent:hover .box {
   animation-play-state: paused;
   cursor: grab;
+}
+
+.aula03 {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 48px;
+}
+.aula03 h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.aula03 .container-box {
+  width: 90%;
+  min-width: 300px;
+  margin: 48px auto;
+  height: auto;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.aula03 .container-box .box-parent {
+  width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  perspective: 300px;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.aula03 .container-box .box-parent .box {
+  width: 150px;
+  height: 150px;
+  background-color: #48e98b;
+  border-radius: 16px;
+  cursor: crosshair;
+  transform-origin: 50% 50%;
+  animation-name: aula03;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 2s;
+  animation-timing-function: linear;
 }/*# sourceMappingURL=style.css.map */

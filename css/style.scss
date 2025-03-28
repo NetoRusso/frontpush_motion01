@@ -94,8 +94,8 @@
     color: $black;
     transition: all 300ms ease-in-out;
     box-shadow: 5px 5px 10px rgba(3, 255, 66, 0.3);
-    
-    &:hover { 
+
+    &:hover {
       cursor: pointer;
       scale: 0.95;
       background-color: $green;
@@ -172,6 +172,7 @@
       }
     }
   }
+
   .teste-1 {
     .container-box {
       .parent-1 {
@@ -297,6 +298,7 @@
 
     }
   }
+
   .teste-2 {
     .container-box {
       .box-parent {
@@ -333,7 +335,7 @@
 
       .parent-13 {
         perspective: 300px;
-        
+
         .box {
           transform-origin: 0% 0%;
           transition: all 500ms ease-in-out;
@@ -348,7 +350,7 @@
         perspective: 300px;
         transform-style: preserve-3d;
         transition: all 500ms ease-in-out;
-        
+
         .box {
           transform-origin: 0% 0%;
           transition: all 500ms ease-in-out;
@@ -357,6 +359,7 @@
 
         &:hover {
           transform: rotateX(60deg);
+
           .box {
             transform: rotateY(45deg);
           }
@@ -380,7 +383,6 @@
 
 
 }
-
 
 .aula01 {
   width: 100%;
@@ -419,7 +421,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // perspective: 200px;
 
   h1 {
     font-size: 3rem;
@@ -474,3 +475,57 @@
   }
 }
 
+.aula03 {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 48px;
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .container-box {
+    width: 90%;
+    min-width: 300px;
+    margin: 48px auto;
+    height: auto;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .box-parent {
+      width: 150px;
+      height: 150px;
+      border-radius: 16px;
+      perspective: 300px;
+      background-color: rgba(0, 0, 0, .3);
+      overflow: hidden;
+
+      .box {
+        width: 150px;
+        height: 150px;
+        background-color: $green;
+        border-radius: 16px;
+        cursor: crosshair;
+        transform-origin: 50% 50%;
+
+        animation-name: aula03;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-delay: 2s;
+        animation-timing-function: linear;
+
+      }
+    }
+  }
+}

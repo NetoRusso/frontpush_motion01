@@ -32,6 +32,8 @@ body {
   font-family: "Winky Sans", sans-serif;
 }
 
+// Menu ================================================
+
 header {
   width: 100%;
   display: flex;
@@ -356,5 +358,19 @@ header {
 
   100% {
     transform: translateY(-50px);
+  }
+}
+
+@keyframes aula03 {
+  0% {
+    width: 200px;
+    height: 200px;
+    transform: rotate(-45deg);
+  }
+  
+  100% {
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
   }
 }
