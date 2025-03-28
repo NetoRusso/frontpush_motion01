@@ -575,3 +575,54 @@
     }
   }
 }
+
+.aula05 {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 48px;
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .container-box {
+    width: 90%;
+    min-width: 300px;
+    margin: 48px auto;
+    height: auto;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .box-parent {
+      width: 150px;
+      height: 150px;
+      border-radius: 16px;
+      perspective: 300px;
+      background-color: rgba(0, 0, 0, .3);
+      transform-style: preserve-3d;
+      animation: aula05p 10s ease alternate infinite;
+
+      .box {
+        width: 150px;
+        height: 150px;
+        background-color: $green;
+        border-radius: 16px;
+        cursor: crosshair;
+
+        animation: aula05 5s ease alternate infinite,
+          aula05c 2s ease alternate infinite;
+        ;
+      }
+    }
+  }
+}

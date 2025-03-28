@@ -385,3 +385,36 @@ header {
     width: 150px;
   }
 }
+
+@keyframes aula05 {
+  0% {
+    transform: rotateX(0deg) skewX(45deg);
+
+  }
+  
+  100% {
+    transform: rotateX(360deg) skewX(-45deg);
+  }
+}
+
+@keyframes aula05p {
+  0% {
+    transform: rotateY(0deg) skewY(-15deg);
+
+  }
+  
+  100% {
+    transform: rotateY(360deg) skewY(15deg);
+  }
+}
+
+@keyframes aula05c {
+  0% {
+    background-color: red;
+  }
+  
+  100% {
+    background-color: $green;
+  }
+}
+
